@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.9.0/math.min.js"></script>
+
+
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center; 
+            align-items: center;    
+            height: 100vh;          
+            margin: 0;              
+            overflow: hidden;       
+        }
+        
+        table {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            transform: scale(2); 
+            transform-origin: center; 
+            background-color: darkgray
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        td {
+            display: contents;
+            width: 20px;
+        }
+
+        #result {
+            width: 95px;
+            background-color: white;
+            color: black;
+        }
+
+        input {
+            width: 30px;
+            margin-right: 3px;
+            margin-left: 3px;
+            background-color: darkslategrey;
+            color: white;
+            border-radius: 5px;
+        }
+
+        @media (min-width: 768px){    /* For Tablets */
+            table {
+                transform: scale(3);
+            }
+        }
+
+        @media (min-width: 1024px){  /* Desktop */
+            table {
+                transform: scale(4);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input type="text" id="result"></td>  <!-- Output location -->
+            <td><input type="button" value="c" id="eraser" onclick="erase();"></td>
+        </tr>
+
+        <tr> <!-- First Row -->
+            <td><input type="button" value="1" onclick="getValue('1');"></td>
+            <td><input type="button" value="2" onclick="getValue('2');"></td>
+            <td><input type="button" value="3" onclick="getValue('3');"></td>
+            <td><input type="button" value="/" onclick="getValue('/');"></td>
+        </tr>
+
+        <tr> <!-- Second Row -->
+            <td><input type="button" value="4" onclick="getValue('4');"></td>
+            <td><input type="button" value="5" onclick="getValue('5');"></td>
+            <td><input type="button" value="6" onclick="getValue('6');"></td>
+            <td><input type="button" value="*" onclick="getValue('*');"></td>
+        </tr>
+
+        <tr> <!--Third Row -->
+            <td><input type="button" value="7" onclick="getValue('7');"></td>
+            <td><input type="button" value="8" onclick="getValue('8');"></td>
+            <td><input type="button" value="9" onclick="getValue('9');"></td>
+            <td><input type="button" value="-" onclick="getValue('-');"></td>
+        </tr>
+
+        <tr> <!--Last Row -->
+            <td><input type="button" value="0" onclick="getValue('0');"></td>
+            <td><input type="button" value="." onclick="getValue('.');"></td>
+            <td><input type="button" value="=" onclick="calculate();"  ></td>
+            <td><input type="button" value="+" onclick="getValue('+');"></td>
+        </tr>
+    </table>
+</body>
+</html>
